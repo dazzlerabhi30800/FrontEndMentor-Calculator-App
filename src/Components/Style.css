@@ -49,8 +49,8 @@
 
   /* #### Backgrounds */
 
-  --Very-dark-violet: hsl(268, 75%, 9%);
-  --Very-dark-violet: hsl(268, 71%, 12%);
+  --Very-dark-violet-1: hsl(268, 75%, 9%);
+  --Very-dark-violet-2: hsl(268, 71%, 12%);
 
   /* #### Keys */
 
@@ -60,7 +60,7 @@
   --Pure-cyan: hsl(176, 100%, 44%);
   --Soft-cyan: hsl(177, 92%, 70%);
 
-  --Very-dark-violet: hsl(268, 47%, 21%);
+  --Very-dark-violet-3: hsl(268, 47%, 21%);
   --Dark-magenta: hsl(290, 70%, 36%);
 
   /* #### Text */
@@ -76,6 +76,16 @@
 body {
   background: var(--Very-dark-desaturated-blue-1);
   color: white;
+  transition: all .3s linear;
+}
+
+body.light {
+  background: var(--Light-gray);
+  color: var(--White);
+}
+body.contrast {
+  background: var(--Very-dark-violet-1);
+  color: var(--Light-yellow);
 }
 
 .theme--container {
@@ -83,9 +93,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: clamp(360px, 60vw, 800px);
+  width: clamp(400px, 50vw, 600px);
   margin: 1rem auto;
-  /* background: blue; */
   margin: 2rem auto;
 }
 
@@ -117,6 +126,14 @@ body {
   padding: 3px;
   display: flex;
   align-items: center;
+  /* cursor: pointer; */
+  user-select: none;
+}
+.light .theme--toggler {
+  background: var(--Grayish-red);
+}
+.contrast .theme--toggler {
+  background: var(--Very-dark-violet-2);
 }
 .circle {
   position: absolute;
@@ -127,6 +144,9 @@ body {
   left: 5px;
   transition: all 0.3s linear;
 }
+.contrast .circle {
+  background: var(--Pure-cyan);
+}
 
 /* INPUT  */
 .calc--container {
@@ -134,6 +154,8 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  width: clamp(400px, 50vw, 600px);
+  margin: 5px auto;
 }
 .input--wrapper {
   display: flex;
@@ -153,6 +175,14 @@ body {
   font-family: var(--font-league);
   border-radius: 10px;
 }
+.light .input--wrapper input {
+  background: #fdfdfd;
+  color: var(--Very-dark-grayish-yellow);
+}
+.contrast .input--wrapper input {
+  background: var(--Very-dark-violet-2);
+  color: var(--Light-yellow);
+}
 
 .keypad--wrapper {
   display: grid;
@@ -162,6 +192,12 @@ body {
   gap: 12px;
   background: var(--Very-dark-desaturated-blue-2);
   border-radius: 10px;
+}
+.light .keypad--wrapper {
+  background: var(--Grayish-red);
+}
+.contrast .keypad--wrapper {
+  background: var(--Very-dark-violet-2);
 }
 .keypad--wrapper button {
   outline: none;
@@ -175,6 +211,15 @@ body {
   box-shadow: 0px 3px 0px 2px var(--Grayish-orange);
   transition: all 0.3s linear;
 }
+.light .keypad--wrapper button {
+  background: var(--Light-grayish-yellow);
+  box-shadow: 0px 3px 0px 2px var(--Dark-grayish-orange);
+}
+.contrast .keypad--wrapper button {
+  background: var(--Very-dark-violet-3);
+  color: var(--Light-yellow);
+  box-shadow: 0px 3px 0px 2px var(--Dark-magenta);
+}
 .keypad--wrapper button:active {
   box-shadow: 0px 0px 0px 0px transparent;
 }
@@ -183,6 +228,14 @@ body {
   background: var(--Desaturated-dark-blue-1);
   box-shadow: 0px 3px 0px 2px var(--Desaturated-dark-blue-2);
   transition: all 0.3s linear;
+}
+.light #del--btn {
+  background: var(--Dark-moderate-cyan);
+  box-shadow: 0px 3px 0px 2px var(--Very-dark-cyan);
+}
+.contrast #del--btn {
+  background: var(--Dark-violet);
+  box-shadow: 0px 3px 0px 2px var(--Vivid-magenta);
 }
 #del--btn:active {
   box-shadow: 0px 0px 0px 0px transparent;
@@ -194,6 +247,14 @@ body {
   box-shadow: 0px 3px 0px 2px var(--Desaturated-dark-blue-2);
   transition: all 0.3s linear;
 }
+.light #reset--btn {
+  background: var(--Dark-moderate-cyan);
+  box-shadow: 0px 3px 0px 2px var(--Very-dark-cyan);
+}
+.contrast #reset--btn {
+  background: var(--Dark-violet);
+  box-shadow: 0px 3px 0px 2px var(--Vivid-magenta);
+}
 #reset--btn:active {
     box-shadow: 0px 0px 0px 0px transparent;
 }
@@ -203,6 +264,14 @@ body {
   background: var(--Red);
   box-shadow: 0px 3px 0px 2px var(--Dark-red);
   transition: all 0.3s linear;
+}
+.light #equal--btn {
+  background: var(--Orange);
+  box-shadow: 0px 3px 0px 2px var(--Dark-orange);
+}
+.contrast #equal--btn {
+  background: var(--Pure-cyan);
+  box-shadow: 0px 3px 0px 2px hsl(187, 92%, 39%);
 }
 #equal--btn:active {
     box-shadow: 0px 0px 0px 0px transparent;

@@ -1,32 +1,67 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Style.css";
 
 function Input() {
+    const [inputValue, setInputValue] = useState('');
+    const [result,setResult] = useState('');
+    const ops = ['/', '*', '+', '-', '.'];
+    const handleValue = (value) => {
+        if(
+          ops.includes(value) && inputValue.slice(-1) === '0' ||
+          ops.includes(value) && ops.includes(inputValue.slice(-1))
+        ){
+          setInputValue('');
+          return;
+        }
+        setInputValue(inputValue + value);
+
+        if(!ops.includes(value)) {
+          setResult(eval(inputValue + value).toString());
+        }
+    }
+
+    const calculate = () => {
+      setInputValue(eval(inputValue).toString());
+    }
+
+    const deleteLast = () => {
+      if(inputValue == '') {
+        return;
+      }
+
+      const value = inputValue.slice(0, -1);
+      setInputValue(value);
+    }
+
+    const reset = () => {
+      setInputValue('');
+    }
+    
   return (
     <div className="calc--container">
       <div className="input--wrapper">
-        <input type="text" disabled="disabled" />
+        <input type="text" readOnly value={inputValue} />
       </div>
 
       <div className="keypad--wrapper">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button id="del--btn">DEL</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>x</button>
-        <button id="reset--btn">RESET</button>
-        <button id="equal--btn">=</button>
+        <button onClick={() => handleValue('7')}>7</button>
+        <button onClick={() => handleValue('8')}>8</button>
+        <button onClick={() => handleValue('9')}>9</button>
+        <button id="del--btn" onClick={deleteLast}>DEL</button>
+        <button onClick={() => handleValue('4')}>4</button>
+        <button onClick={() => handleValue('5')}>5</button>
+        <button onClick={() => handleValue('6')}>6</button>
+        <button onClick={() => handleValue('+')}>+</button>
+        <button onClick={() => handleValue('1')}>1</button>
+        <button onClick={() => handleValue('2')}>2</button>
+        <button onClick={() => handleValue('3')}>3</button>
+        <button onClick={() => handleValue('-')}>-</button>
+        <button onClick={() => handleValue('.')}>.</button>
+        <button onClick={() => handleValue('0')}>0</button>
+        <button onClick={() => handleValue('/')}>/</button>
+        <button onClick={() => handleValue('*')}>x</button>
+        <button id="reset--btn" onClick={reset}>RESET</button>
+        <button id="equal--btn" onClick={calculate}>=</button>
       </div>
     </div>
   );
