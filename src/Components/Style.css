@@ -126,8 +126,12 @@ body.contrast {
   padding: 3px;
   display: flex;
   align-items: center;
-  /* cursor: pointer; */
   user-select: none;
+}
+@media ( hover : hover ) {
+  .theme--toggler {
+    cursor: pointer;
+  }
 }
 .light .theme--toggler {
   background: var(--Grayish-red);
