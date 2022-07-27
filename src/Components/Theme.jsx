@@ -2,22 +2,7 @@ import React from 'react';
 import './Style.css';
 
 function Theme() {
-    // function handleTheme(e){
-    //     const index = e.target.dataset.index;
-    //     const theme = document.querySelector('.theme--toggler');
-    //     const slider = document.querySelector('.theme--toggler .circle');
-    //     const states = document.querySelector('.states');
-    //     const themeWidth = states.offsetWidth;
-    //     // console.log(themeWidth)
-    //     theme.style.width = themeWidth;
-    //     if(index == 2) {
-    //         slider.style.left = `${(index * 20) + 4}px`;
-    //         document.body.classList.remove('light');
-    //     }
-    //     else {
-    //         slider.style.left = `${(index * 17) + 5}px`;
-    //     }
-    // }
+    
 
     const handleCircle = (e) => {
         // console.log(e.pageX);

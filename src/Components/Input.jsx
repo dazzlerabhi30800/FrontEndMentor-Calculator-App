@@ -22,6 +22,7 @@ function Input() {
 
     const calculate = () => {
       setInputValue(eval(inputValue).toString());
+      setInputValue(result.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
     }
 
     const deleteLast = () => {
