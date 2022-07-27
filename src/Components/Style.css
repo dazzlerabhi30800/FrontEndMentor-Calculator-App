@@ -132,6 +132,9 @@ body.contrast {
   .theme--toggler {
     cursor: pointer;
   }
+  .keypad--wrapper button {
+    cursor: pointer;
+  }
 }
 .light .theme--toggler {
   background: var(--Grayish-red);
@@ -209,7 +212,6 @@ body.contrast {
   border-radius: 5px;
   padding: 1.2rem 0px;
   font-size: 1.4rem;
-  cursor: pointer;
   font-family: var(--font-league);
   background: var(--Light-grayish-orange);
   box-shadow: 0px 3px 0px 2px var(--Grayish-orange);
