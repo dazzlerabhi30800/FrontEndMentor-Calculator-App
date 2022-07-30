@@ -41,8 +41,8 @@ function Input() {
   return (
     <div className="calc--container">
       <div className="input--wrapper">
-          <label htmlFor="screen" />
-          <input id="screen" type="text" readOnly value={inputValue} />
+          <label htmlFor="screenReading"></label>
+          <input name="screenReading" id="screenReading" type="text" readOnly value={inputValue} />
       </div>
 
       <div className="keypad--wrapper">
