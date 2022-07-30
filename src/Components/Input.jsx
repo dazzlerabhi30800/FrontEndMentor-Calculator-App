@@ -40,11 +40,11 @@ function Input() {
     
   return (
     <div className="calc--container">
-      <form className="input--wrapper">
+      <div className="input--wrapper">
         <label htmlFor="screen">
-        <input id="screen" type="text" readOnly value={inputValue} />
+          <input id="screen" type="text" readOnly value={inputValue} />
         </label>
-      </form>
+      </div>
 
       <div className="keypad--wrapper">
         <button onClick={() => handleValue('7')}>7</button>
