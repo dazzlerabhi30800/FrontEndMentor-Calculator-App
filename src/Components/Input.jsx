@@ -3,6 +3,7 @@ import "./Style.css";
 
 function Input() {
     const [inputValue, setInputValue] = useState('');
+    const [labelValue, setLableValue] = useState('');
     const [result,setResult] = useState('');
     const ops = ['/', '*', '+', '-', '.'];
     const handleValue = (value) => {
@@ -41,7 +42,7 @@ function Input() {
   return (
     <div className="calc--container">
       <div className="input--wrapper">
-        <label htmlFor="screendigit"></label>
+        <label htmlFor="screendigit">{labelValue}</label>
         <input type="text" name="screendigit" id="screendigit" readOnly value={inputValue} />
       </div>
 
