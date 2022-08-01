@@ -182,6 +182,19 @@ body.contrast {
   font-family: var(--font-league);
   border-radius: 10px;
 }
+.input--wrapper .input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--Very-dark-desaturated-blue-3);
+  text-align: right;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: var(--font-league);
+  border-radius: 10px;
+  height: 20px;
+}
 .light .input--wrapper input {
   background: #fdfdfd;
   color: var(--Very-dark-grayish-yellow);
