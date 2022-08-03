@@ -38,7 +38,6 @@ function Input() {
     const reset = () => {
       setInputValue('');
     }
-    
   return (
     <div className="calc--container">
       <div className="input--wrapper">
