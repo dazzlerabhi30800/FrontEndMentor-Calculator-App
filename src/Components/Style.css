@@ -170,7 +170,7 @@ body.contrast {
   align-items: center;
   padding: 10px 1px;
 }
-.input--wrapper input {
+/* .input--wrapper input {
   width: 100%;
   padding: 1rem;
   background: var(--Very-dark-desaturated-blue-3);
@@ -181,8 +181,8 @@ body.contrast {
   font-size: 1.5rem;
   font-family: var(--font-league);
   border-radius: 10px;
-}
-.input--wrapper .input {
+} */
+.input--wrapper .screen {
   width: 100%;
   padding: 1rem;
   background: var(--Very-dark-desaturated-blue-3);
@@ -195,11 +195,11 @@ body.contrast {
   border-radius: 10px;
   height: 20px;
 }
-.light .input--wrapper input {
+.light .input--wrapper .screen {
   background: #fdfdfd;
   color: var(--Very-dark-grayish-yellow);
 }
-.contrast .input--wrapper input {
+.contrast .input--wrapper .screen {
   background: var(--Very-dark-violet-2);
   color: var(--Light-yellow);
 }

@@ -42,7 +42,7 @@ function Input() {
     <div className="calc--container">
       <div className="input--wrapper">
         {/* <input type="text" name="screendigit" id="screendigit" readOnly value={inputValue} /> */}
-        <div className="input">{inputValue}</div>
+        <div className="screen">{inputValue}</div>
       </div>
 
       <div className="keypad--wrapper">
